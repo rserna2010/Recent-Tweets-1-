@@ -35,14 +35,8 @@ require APP_ROOT.join('config', 'database')
 
 
 @client = Twitter.configure do |config|
-  config.consumer_key = '#HASHED OUT'
-  config.consumer_secret = '#HASHED OUT'
-  config.oauth_token = '#HASHED OUT'
-  config.oauth_token_secret    = '#HASHED OUT'
-end
-
-env_config = YAML.load_file(APP_ROOT.join('config', 'twitter.yaml'))
-
-env_config.each do |key, value|
-  ENV[key] = value
+  config.consumer_key = 'iuxXFUoxQ5tAmP4CLYXYg'
+  config.consumer_secret = 'hnFIcrwEQtssWVL1siUHwMT2vdb0mLqK6Eya67rCHE'
+  config.oauth_token = '1480867766-r4qjrBHblyoxizFNbeI9wfCzIUBZIldQIeBQEnw'
+  config.oauth_token_secret    = 'LWesq5GSWtbO0JE188eY4LqRqDsxW1o3awsOVBjEE'
 end
