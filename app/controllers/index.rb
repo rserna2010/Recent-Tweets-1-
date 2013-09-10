@@ -4,16 +4,21 @@ get '/' do
 end
 
 get '/:username' do
-  @current_user = TwitterUser.find_or_create_by_username(params[:username])
-  @ten_tweets = @current_user.tweets.limit(10)
+  @user = TwitterUser.find_or_create_by_username(params[:username])
+  puts "made it to get route"
+  @user.fetch_tweets!
+
+  @ten_tweets = @user.tweets.limit(10)
+  @loading = false
   erb :lastest
 end
 
 post '/username' do 
   @user = TwitterUser.find_or_create_by_username(params[:username])
   if @user.tweets.empty? || @user.tweets_stale?
-     @user.fetch_tweets!
+     @loading = true
   end
 
-  redirect to '/:username'
+  @ten_tweets = @user.tweets.limit(10)
+  erb :lastest
 end

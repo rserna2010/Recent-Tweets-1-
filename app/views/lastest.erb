@@ -1,4 +1,10 @@
 <ul><% @ten_tweets.each do |tweet| %>
   <li><%= tweet.text %></li>
 <% end %>
-</ul?
+
+
+<% if @loading %>
+<img id="spinner" data-name="<%= @user.username %>" src="/spinner.gif">
+<% end %>
+
+</ul>

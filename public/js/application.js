@@ -1,7 +1,15 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+		$("#spinner").load(function(){
+			var username = $("#spinner").data("name");
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+			$.ajax({
+				url: '/' + username,
+				method: "get"
+			}).done(function(data){
+				console.log(data)
+				$('ul').html(data)
+			})
+
+
+		})
 });
