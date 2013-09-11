@@ -38,8 +38,5 @@ require APP_ROOT.join('config', 'database')
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 @client = Twitter.configure do |config|
-    config.consumer_key = 'iuxXFUoxQ5tAmP4CLYXYg'
-  config.consumer_secret = 'hnFIcrwEQtssWVL1siUHwMT2vdb0mLqK6Eya67rCHE'
-  config.oauth_token = '1480867766-r4qjrBHblyoxizFNbeI9wfCzIUBZIldQIeBQEnw'
-  config.oauth_token_secret    = 'LWesq5GSWtbO0JE188eY4LqRqDsxW1o3awsOVBjEE'
+
 end

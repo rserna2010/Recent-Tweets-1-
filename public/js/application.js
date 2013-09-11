@@ -9,7 +9,24 @@ $(document).ready(function() {
 				console.log(data)
 				$('ul').html(data)
 			})
+		});
 
-
-		})
+		$("#real_tweet").on('submit', function(e){
+			e.preventDefault();
+			$("#waiting").text("Pending");
+			$("#real_tweet").toggle()
+			
+			$.ajax({
+				url: "/realtweet",
+				method: "post",
+				data: $(this).serialize()
+			}).done(function(server_data){
+				$("#waiting").text("Tweet has posted")
+				$("#real_tweet").toggle()
+				$("#value_space").val('');
+		});
+	});
 });
+
+		
+

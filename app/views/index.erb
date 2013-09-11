@@ -1,8 +1,19 @@
 <div class="container">
   <h1>Welcome to Twitter!</h1>
 
+  <p id="waiting"></p>
+
+  <br>
+  Find Last 10 Tweets
   <form action="/username" method="post">
   	<input type="text" name="username">
+  	<input type="submit">
+  </form>
+
+  <br>
+  New Tweet
+  <form id="real_tweet" action="/realtweet" method="post">
+  	<input id="value_space" type="text" name="realtweet" value="">
   	<input type="submit">
   </form>
 

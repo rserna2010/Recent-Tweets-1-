@@ -22,3 +22,11 @@ post '/username' do
   @ten_tweets = @user.tweets.limit(10)
   erb :lastest
 end
+
+
+post '/realtweet' do 
+  @tweet = params[:realtweet]
+  Twitter.update(@tweet)
+
+  redirect to '/'
+end

@@ -10,4 +10,5 @@ class TwitterUser < ActiveRecord::Base
   def tweets_stale?
      ((Time.now - self.tweets.first.created_at) / 60) > 15.00
   end
+
 end
